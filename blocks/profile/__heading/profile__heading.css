@@ -1,11 +1,11 @@
-.profile__row {
+.profile__heading {
   display: flex;
   flex-direction: row;
-  align-items: flex-end;
+  align-items:baseline;
 }
 
 @media (max-width: 900px) {
-  .profile__row {
+  .profile__heading {
     max-width: 282px;
     justify-content: center;
     align-items: flex-end;

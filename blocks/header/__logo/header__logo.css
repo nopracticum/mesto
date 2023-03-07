@@ -1,11 +1,15 @@
 .header__logo {
-  max-width: 142px;
-  object-fit: cover;
+  width: 104px;
+  height: 24.4px;
+  margin: 0 0 31.5px 27px;
+  object-fit: contain;
+  display: block;
 }
 
-@media (max-width: 900px) {
+@media (min-width:768px) {
   .header__logo {
-    max-width: 103.74px;
-    margin-left: 27px;
+    width: 142px;
+    height: 33px;
+    margin: 0 0 41px;
   }
 }
