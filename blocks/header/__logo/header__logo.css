@@ -3,10 +3,9 @@
   object-fit: cover;
 }
 
-@media (min-width:768px) {
+@media (max-width: 900px) {
   .header__logo {
-    width: 142px;
-    height: 33px;
-    margin: 0 0 41px;
+    max-width: 100px;
+    margin-left: 27px;
   }
 }
