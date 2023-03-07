@@ -44,7 +44,7 @@ function createCard (name, link) {
     openPopup(popupImage);
     imageLink.src = evt.target.src;
     imageLink.alt = evt.target.alt;
-    imageName.textContent = evt.target.closest('.card').querySelector('.card__title').textContent;
+    imageName.textContent = evt.target.alt;
   } )
 
   return cardElement;
