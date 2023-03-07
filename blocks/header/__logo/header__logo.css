@@ -8,5 +8,6 @@
   .header__logo {
     max-width: 100px;
     margin-left: 27px;
+    padding-bottom: 30px;
   }
 }
