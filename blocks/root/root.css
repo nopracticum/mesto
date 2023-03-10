@@ -7,11 +7,8 @@
   box-sizing: border-box;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 900px) {
   .root {
     width: 95%;
   }
-}
-* {
-  outline: 1px solid red;
 }
