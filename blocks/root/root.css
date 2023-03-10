@@ -12,3 +12,6 @@
     width: 95%;
   }
 }
+* {
+  outline: 1px solid red;
+}
