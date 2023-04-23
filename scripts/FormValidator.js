@@ -11,6 +11,7 @@ class FormValidator {
   constructor (selectorsSet, form) {
     this._selectorsSet = selectorsSet;
     this._form = form;
+    this._submitBtn = this._form.querySelector(this._selectorsSet.submitButtonSelector)
   }
 
   _hideInputError(input) {
@@ -28,11 +29,10 @@ class FormValidator {
   }
   
   _submitBtnState() {
-    const submitBtn = this._form.querySelector(this._selectorsSet.submitButtonSelector);
     if (this._form.checkValidity()) {
-      submitBtn.removeAttribute(this._selectorsSet.inactiveButtonAttribute);
+      this._submitBtn.removeAttribute(this._selectorsSet.inactiveButtonAttribute);
     } else {
-      submitBtn.setAttribute(this._selectorsSet.inactiveButtonAttribute, true);
+      this._submitBtn.setAttribute(this._selectorsSet.inactiveButtonAttribute, true);
     }
   }
   

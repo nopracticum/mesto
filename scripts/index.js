@@ -46,17 +46,24 @@ function handleEditProfileFormSubmit(evt) {
   closePopup(popupEditProfile);
 }
 
+
+function createNewCard(title,link) {
+const newCard = new Card( title, link, "#card");
+const cardElement = newCard.createCard();
+return cardElement;
+}
+
 function handleAddCardFormSubmit(evt) {
   evt.preventDefault();
-  const newCard = new Card(titleInput.value, linkInput.value, "#card");
-  cardsContainer.prepend(newCard.createCard());
+  const newCard = createNewCard(titleInput.value, linkInput.value);
+  cardsContainer.prepend(newCard);
   closePopup(popupAddCard);
   addCardForm.reset();
 }
 
 initialCards.forEach ((item) => {
-  const newCard = new Card(item.name, item.link, "#card");
-  cardsContainer.prepend(newCard.createCard());
+  const newCard = createNewCard(item.name, item.link);
+  cardsContainer.prepend(newCard);
 });
 
 Array.from(popups).forEach((popup) => {

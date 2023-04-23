@@ -19,15 +19,24 @@ class Card {
       this._cardImage.alt = this._name;
     }
     
+    _toggleLike(evt){
+        evt.target.classList.toggle('card__like-button_active')
+   } 
+
+    _deleteCard(evt){
+    evt.target.closest('.card').remove()
+} 
+    _handleImageClick(evt){
+    openPopup(popupImage);
+    imageLink.src = evt.target.src;
+    imageLink.alt = evt.target.alt;
+    imageName.textContent = evt.target.closest('.card').querySelector('.card__title').textContent;
+} 
+
     _setEventListeners() {
-      this._cardElement.querySelector('.card__like-button').addEventListener('click', (evt) => evt.target.classList.toggle('card__like-button_active'));
-      this._cardElement.querySelector('.card__trash-button').addEventListener('click', (evt) => evt.target.closest('.card').remove());
-      this._cardImage.addEventListener('click', (evt) => {
-        openPopup(popupImage);
-        imageLink.src = evt.target.src;
-        imageLink.alt = evt.target.alt;
-        imageName.textContent = evt.target.closest('.card').querySelector('.card__title').textContent;
-      })
+      this._cardElement.querySelector('.card__like-button').addEventListener('click', (evt) =>  this._toggleLike(evt));
+      this._cardElement.querySelector('.card__trash-button').addEventListener('click', (evt) => this._deleteCard(evt));
+      this._cardImage.addEventListener('click', (evt) => this._handleImageClick(evt))
     }
     
     createCard() {
