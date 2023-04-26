@@ -5,8 +5,8 @@ const imageName = popupImage.querySelector('.popup__image-name');
 const profile = document.querySelector('.profile');
 const buttonOpenPopupProfile = profile.querySelector('.profile__edit-button');
 const formEditProfile = document.forms.editProfileForm;
-const inputProfileName = formEditProfile.elements.profileName;
-const inputProfileJob = formEditProfile.elements.profileJob;
+const inputProfileName = formEditProfile.elements.Name;
+const inputProfileJob = formEditProfile.elements.Job;
 
 const buttonAddCard = profile.querySelector('.profile__add-button');
 const formAddCard = document.forms.addCardForm;

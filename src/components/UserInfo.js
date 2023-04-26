@@ -10,7 +10,7 @@ export default class UserInfo {
     return { title: this._titleElement.textContent, subtitle: this._subTitleElement.textContent};
   }
 
-  setUserInfo (name, job) {
+  setUserInfo ({ name, job }) {
     this._titleElement.textContent = name;
     this._subTitleElement.textContent = job;
   }

@@ -32,7 +32,7 @@ const popupWithImage = new PopupWithImage('.popup_type_image');
 popupWithImage.setEventListeners();
 
 const popupEditProfile = new PopupWithForm('.popup_type_edit-profile', (inputValues) => {
-  popupUserInfo.setUserInfo(inputValues['profileName'], inputValues['profileJob']);
+  popupUserInfo.setUserInfo(inputValues);
   popupEditProfile.close();
 });
 
