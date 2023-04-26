@@ -11,7 +11,8 @@ class FormValidator {
   constructor (selectorsSet, form) {
     this._selectorsSet = selectorsSet;
     this._form = form;
-    this._submitBtn = this._form.querySelector(this._selectorsSet.submitButtonSelector)
+    this._buttonSubmit = this._form.querySelector(this._selectorsSet.submitButtonSelector);
+    this._inputsList = Array.from(this._form.querySelectorAll(this._selectorsSet.inputSelector));
   }
 
   _hideInputError(input) {
@@ -30,9 +31,9 @@ class FormValidator {
   
   _submitBtnState() {
     if (this._form.checkValidity()) {
-      this._submitBtn.removeAttribute(this._selectorsSet.inactiveButtonAttribute);
+      this._buttonSubmit.removeAttribute(this._selectorsSet.inactiveButtonAttribute);
     } else {
-      this._submitBtn.setAttribute(this._selectorsSet.inactiveButtonAttribute, true);
+      this._buttonSubmit.setAttribute(this._selectorsSet.inactiveButtonAttribute, true);
     }
   }
   
@@ -46,11 +47,14 @@ class FormValidator {
   }
   
   _setEventListeners () {
-    const inputsList = Array.from(this._form.querySelectorAll(this._selectorsSet.inputSelector));
-    inputsList.forEach((input) => {input.addEventListener('input', () => this._checkInputValidity(input))});
+    this._inputsList.forEach((input) => {
+      input.addEventListener('input', () => this._checkInputValidity(input))});
     this._form.addEventListener('reset', () => {
-    setTimeout(() => { 
-      this._submitBtnState(), 0})
+      setTimeout(() => { 
+        this._submitBtnState(), 0
+      });
+      this._inputsList.forEach((input) => {
+        this._form.addEventListener('reset', () => this._hideInputError(input))});
     })
   }
 

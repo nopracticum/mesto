@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title lang="en">Mesto</title>
-    <link rel="stylesheet" href="./pages/index.css" />
+
   </head>
 
   <body class="page">
@@ -12,7 +12,7 @@
       <header class="header">
         <img
           class="header__logo"
-          src="./images/__logo.svg"
+          src="<%=require('./images/__logo.svg')%>"
           alt="Логотип Место"
         />
       </header>
@@ -22,7 +22,7 @@
           <div class="profile__content">
             <img
               class="profile__avatar"
-              src="./images/__avatar.png"
+              src="<%=require('./images/__avatar.png')%>"
               alt="Фото профиля"
             />
             <div class="profile__info">
@@ -164,9 +164,5 @@
       </div>
     </div>
 
-    <script src="./scripts/initialCards.js"></script>
-    <script type="module" src="./scripts/index.js"></script>
-    <script type="module" src="./scripts/FormValidator.js"></script>
-    <script type="module" src="./scripts/Card.js"></script>
   </body>
 </html>
