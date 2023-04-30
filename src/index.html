@@ -20,21 +20,22 @@
       <main class="content">
         <section class="profile">
           <div class="profile__content">
+            <div class="profile__edit-avatar">
             <img
               class="profile__avatar"
-              src="<%=require('./images/__avatar.png')%>"
               alt="Фото профиля"
             />
+          </div>
             <div class="profile__info">
               <div class="profile__heading">
-                <h1 class="profile__title">Жак-Ив Кусто</h1>
+                <h1 class="profile__title"></h1>
                 <button
                   class="profile__edit-button"
                   type="button"
                   aria-label="Редактировать профиль"
                 ></button>
               </div>
-              <p class="profile__subtitle">Исследователь океана</p>
+              <p class="profile__subtitle"></p>
             </div>
           </div>
           <button
@@ -50,11 +51,14 @@
               <img class="card__image" />
               <div class="card__description">
                 <h2 class="card__title"></h2>
-                <button
-                  class="card__like-button"
-                  type="button"
-                  aria-label="Оценить"
-                ></button>
+                <div class="card__like-container">
+                  <button
+                    class="card__like-button"
+                    type="button"
+                    aria-label="Оценить"
+                  ></button>
+                  <p class="card__like-count">1</p>
+                </div>
               </div>
               <button
                 class="card__trash-button"
@@ -84,10 +88,10 @@
                 class="popup__input popup__input_type_name"
                 id="name-input"
                 placeholder="Имя"
-                name="Name"
-                required
+                name="title"
                 minlength="2"
                 maxlength="40"
+                required
               />
               <span class="popup__input-error name-input-error"></span>
             </div>
@@ -96,17 +100,15 @@
                 type="text"
                 class="popup__input popup__input_type_job"
                 id="job-input"
-                placeholder="Род деятельности"
-                name="Job"
-                required
+                placeholder="О себе"
+                name="subtitle"
                 minlength="2"
                 maxlength="200"
+                required
               />
               <span class="popup__input-error job-input-error"></span>
             </div>
-            <button type="submit" class="popup__submit-button">
-              Сохранить
-            </button>
+            <button type="submit" class="popup__submit-button">Сохранить</button>
           </form>
         </div>
       </div>
@@ -150,6 +152,48 @@
           </form>
         </div>
       </div>
+
+      <div class="popup popup_type_edit-avatar">
+        <div class="popup__container">
+          <button
+            class="popup__close-button"
+            type="button"
+            aria-label="Закрыть попап"
+          ></button>
+          <h2 class="popup__title">Обновить изображение профиля</h2>
+          <form class="popup__form" name="editAvatarForm">
+            <div class="popup__section">
+              <input
+                type="url"
+                class="popup__input popup__input_type_link"
+                id="avatar-link"
+                placeholder="Ссылка на изображение"
+                name="avatarLink"
+                required
+              />
+              <span class="popup__input-error avatar-link-error"></span>
+            </div>
+            <button type="submit" class="popup__submit-button" disabled>
+              Сохранить
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <div class="popup popup_type_delete">
+        <div class="popup__container">
+          <button
+            class="popup__close-button"
+            type="button"
+            aria-label="Закрыть попап"
+          ></button>
+          <h2 class="popup__title popup__title_type_delete">Вы уверены?</h2>
+          <form class="popup__form" name="deleteForm">
+            <button type="submit" class="popup__submit-button">Да</button>
+          </form>
+        </div>
+      </div>
+
 
       <div class="popup popup_type_image">
         <div class="popup__image-holder">
