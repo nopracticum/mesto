@@ -67,7 +67,7 @@ export default class Card {
   updateLikes(data) {
     this._likes = data.likes;
     this._heartCount.textContent = this._likes.length;
-    this._buttonLike.classList.toggle('card__heart-button_active');
+    this._buttonLike.classList.toggle('card__like-button_active');
   }
 
   deleteCard() {
